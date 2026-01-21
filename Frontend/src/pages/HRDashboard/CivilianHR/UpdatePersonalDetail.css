@@ -1,0 +1,634 @@
+.update-personal-detail.civilian {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-header h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #f39c12, #e74c3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.message {
+  padding: 1rem;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  display:flex;
+  gap: 40px;
+  align-items: wrap;
+
+  
+}
+
+.photo-section {
+  flex: 0 0 200px;
+}
+
+.photo-container {
+  text-align: center;
+}
+
+.employee-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  border: 2px solid #f39c12;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.update-photo-btn {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.update-photo-btn:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+}
+
+.form-section {
+  flex: 1;
+}
+
+.datagrid {
+  width: 100%;
+  border: 2px solid #2056AC;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.datagrid table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.datagrid thead th {
+  background: #2056AC;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.datagrid tbody td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.datagrid tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.datagrid tbody tr:hover {
+  background-color: #fff8e1;
+}
+
+.datagrid td:first-child {
+  font-weight: 600;
+  width: 200px;
+  color: #2c3e50;
+}
+
+.datagrid input,
+.datagrid textarea,
+.datagrid select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.datagrid input:focus,
+.datagrid textarea:focus,
+.datagrid select:focus {
+  outline: none;
+  border-color: #f39c12;
+  box-shadow: 0 0 5px rgba(243, 156, 18, 0.3);
+}
+
+.datagrid input.readonly,
+.datagrid textarea.readonly {
+  background-color: #F3D0D6;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.datagrid textarea {
+  resize: vertical;
+  min-height: 60px;
+  font-family: inherit;
+}
+
+.action-buttons {
+  text-align: center;
+  padding: 1.5rem !important;
+  background: #f8f9fa;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.submit-btn {
+  background: #f39c12;
+  color: white;
+    height: 60px;
+}
+
+.submit-btn:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+.cancel-btn {
+  background: #95a5a6;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+.form-note {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 4px;
+}
+
+.form-note h4 {
+  color: #856404;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Civilian specific styling */
+.civilian .datagrid thead th {
+  background: linear-gradient(135deg, #f39c12, #e74c3c);
+}
+
+.civilian .employee-photo {
+  border-color: #f39c12;
+}
+
+.civilian .update-photo-btn {
+  background: #f39c12;
+}
+
+.civilian .update-photo-btn:hover {
+  background: #e67e22;
+}
+
+.civilian .submit-btn {
+  background: #f39c12;
+}
+
+.civilian .submit-btn:hover {
+  background: #e67e22;
+}
+
+.civilian .datagrid input:focus,
+.civilian .datagrid textarea:focus,
+.civilian .datagrid select:focus {
+  border-color: #f39c12;
+  box-shadow: 0 0 5px rgba(243, 156, 18, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .update-personal-detail.civilian {
+    padding: 1rem;
+  }
+  
+  .form-container {
+    flex-direction: column;
+  }
+  
+  .photo-section {
+    align-self: center;
+  }
+  
+  .datagrid td:first-child {
+    width: 150px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .submit-btn,
+  .cancel-btn {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .update-personal-detail.civilian {
+    padding: 0.5rem;
+  }
+  
+  .form-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .employee-photo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .datagrid thead th {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  
+  .datagrid tbody td {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .datagrid td:first-child {
+    width: 120px;
+    font-size: 0.9rem;
+  }
+}
+.photo-actions {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.select-photo-btn,
+.upload-photo-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+
+.select-photo-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.select-photo-btn:hover {
+  background-color: #0056b3;
+}
+
+.upload-photo-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.upload-photo-btn:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.upload-photo-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.file-info {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.file-info small {
+  display: block;
+  margin: 2px 0;
+}
+
+.employee-photo {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.photo-container {
+  text-align: center;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.update-personal-detail.civilian {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-header h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #f39c12, #e74c3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.message {
+  padding: 1rem;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.photo-section {
+  flex: 0 0 0px;
+}
+
+.photo-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.employee-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid #f39c12;
+  border-radius: 8px;
+  display: block;
+}
+
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.photo-container:hover .photo-overlay {
+  opacity: 1;
+}
+
+.upload-photo-btn {
+  background: rgba(243, 156, 18, 0.9);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.upload-photo-btn:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.upload-photo-btn:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.upload-icon {
+  font-size: 1.2rem;
+}
+
+.upload-text {
+  font-weight: 500;
+}
+
+.employee-info-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.employee-basic-info h3 {
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.employee-appointment {
+  color: #f39c12;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.employee-pak {
+  color: #7f8c8d;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.employee-section {
+  color: #34495e;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+/* Hidden file input */
+.hidden-file-input {
+  display: none;
+}
+
+/* Upload status messages */
+.upload-status {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.upload-status.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.upload-status.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.upload-status.info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Form section styles remain the same */
+.form-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* ... rest of your existing CSS remains the same ... */
+
+.datagrid {
+  width: 100%;
+  border: 2px solid #2056AC;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ... rest of your existing datagrid and button styles ... */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .update-personal-detail.civilian {
+    padding: 1rem;
+  }
+  
+  .form-container {
+    flex-direction: column;
+  }
+  
+  .photo-section {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .photo-container {
+    max-width: 300px;
+    margin: 0 auto 1rem;
+  }
+  
+  .employee-photo {
+    height: 180px;
+  }
+  
+  .datagrid td:first-child {
+    width: 150px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .submit-btn,
+  .cancel-btn {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .update-personal-detail.civilian {
+    padding: 0.5rem;
+  }
+  
+  .form-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .employee-photo {
+    height: 160px;
+  }
+  
+  .upload-photo-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .employee-basic-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .datagrid thead th {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  
+  .datagrid tbody td {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .datagrid td:first-child {
+    width: 120px;
+    font-size: 0.9rem;
+  }
+}

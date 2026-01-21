@@ -1,0 +1,103 @@
+/* Standard Header Styles */
+.standard-header {
+  background: linear-gradient(135deg, #4f6df0 0%, #1210ad 100%);
+  color: white;
+  padding: 10px 0;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.standard-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-content {
+  text-align: center;
+  padding: 0 15px;
+}
+
+.header-content h1 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.subtitle {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.additional-info {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid #00c6ff;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.header-children {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .standard-header {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .header-content h1 {
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .standard-header {
+    padding: 15px 0;
+    margin-bottom: 15px;
+  }
+  
+  .header-content h1 {
+    font-size: 22px;
+  }
+  
+  .subtitle {
+    font-size: 13px;
+  }
+}

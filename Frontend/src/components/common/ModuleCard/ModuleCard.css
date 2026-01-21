@@ -1,0 +1,206 @@
+.module-card {
+  width: 320px;
+  height: 280px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+}
+
+.module-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Front Card with Image */
+.card-front {
+  background: #f8f9fa;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.module-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.module-card:hover .module-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: left;
+}
+
+.module-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.module-name {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.module-short-desc {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Back Card */
+.card-back {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-back h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.module-description {
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.enter-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.enter-btn:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Color variants for different modules */
+.module-card.hr .card-back {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.module-card.inventory .card-back {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.module-card.canteen .card-back {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Fallback if image doesn't load */
+.image-container:has(.module-image[style*="display: none"]) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.image-container:has(.module-image[style*="display: none"]) .image-overlay {
+  position: relative;
+  background: transparent;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .module-card {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+    margin: 10px;
+  }
+  
+  .module-name {
+    font-size: 1.4rem;
+  }
+  
+  .card-back {
+    padding: 1.5rem;
+  }
+  
+  .card-back h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .module-card {
+    height: 220px;
+  }
+  
+  .image-overlay {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .module-name {
+    font-size: 1.3rem;
+  }
+  
+  .module-short-desc {
+    font-size: 0.9rem;
+  }
+}

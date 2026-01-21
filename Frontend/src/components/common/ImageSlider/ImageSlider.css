@@ -1,0 +1,234 @@
+.image-slider {
+  position: relative;
+  width: 100%;
+    height: 45vh;
+  max-height: 600px;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45vh;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Image styling to ensure proper fit */
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image covers the entire area */
+  object-position: center; /* Centers the image */
+  display: block;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  padding: 1rem 1rem 1rem;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.slide.active .slide-content {
+  transform: translateY(0);
+}
+
+.slide-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-content p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.slider-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.slider-btn.prev {
+  left: 25px;
+}
+
+.slider-btn.next {
+  right: 25px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .image-slider {
+    height: 60vh;
+    max-height: 500px;
+  }
+  
+  .slide-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  .slide-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-slider {
+    height: 50vh;
+    max-height: 400px;
+    min-height: 300px;
+    border-radius: 0;
+  }
+  
+  .slide-content {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  
+  .slide-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .slide-content p {
+    font-size: 1.1rem;
+  }
+  
+  .slider-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .slider-btn.prev {
+    left: 15px;
+  }
+  
+  .slider-btn.next {
+    right: 15px;
+  }
+  
+  .slider-dots {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-slider {
+    height: 50vh;
+    max-height: 350px;
+    min-height: 250px;
+  }
+  
+  .slide-content {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .slide-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .slide-content p {
+    font-size: 1rem;
+  }
+  
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Fallback for missing images */
+.slide:has(.slide-image[style*="display: none"]) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.slide:has(.slide-image[style*="display: none"]) .slide-content {
+  background: transparent;
+  position: relative;
+  padding: 2rem;
+}

@@ -1,0 +1,233 @@
+/* Footer Container */
+.footer {
+  position: relative;
+  z-index: 100;
+  padding: 1.5rem 0;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: white; /* Force white text for all themes */
+}
+
+/* Theme-specific backgrounds */
+.footer.blue {
+ background: linear-gradient(135deg, #4f6df0 0%, #1210ad 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer.dark {
+ background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer.light {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #2c3e50;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer.green {
+ background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer.purple {
+   background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+  color: white;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+.copyright {
+  font-size: 1rem; /* Increased from 0.9rem */
+  font-weight: 500; /* Added font weight */
+  margin: 0;
+  flex: 1;
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Increased from 0.75rem */
+}
+
+.footer-link {
+  color: inherit !important; /* Force inherit color */
+  text-decoration: none;
+  font-size: 0.95rem; /* Increased from 0.85rem */
+  font-weight: 500; /* Added font weight */
+  transition: all 0.3s ease;
+  padding: 0.4rem 0.8rem; /* Increased padding */
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+/* Light theme specific */
+.footer.light .footer-link {
+  color: #2c3e50 !important;
+}
+
+.footer.light .footer-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+
+/* Dark themes specific */
+.footer:not(.light) .footer-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.divider {
+  opacity: 0.5;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.system-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Increased from 0.5rem */
+}
+
+.version {
+  font-size: 0.9rem; /* Increased from 0.8rem */
+  font-weight: 500; /* Added font weight */
+  font-family: 'Courier New', monospace;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+.status-indicator {
+  font-size: 0.8rem; /* Increased from 0.6rem */
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.status-indicator.active {
+  color: #4ade80 !important;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.inactive {
+  color: #ef4444 !important;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-container {
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .copyright {
+    font-size: 0.95rem;
+  }
+  
+  .footer-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  
+  .copyright {
+    order: 2;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .footer-links {
+    order: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+  }
+  
+  .footer-link {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.7rem;
+  }
+  
+  .system-info {
+    order: 3;
+    margin-top: 0.5rem;
+  }
+  
+  .version {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 1.2rem 1rem;
+    gap: 1rem;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+  }
+  
+  .footer-links {
+    gap: 0.5rem 1rem;
+  }
+  
+  .footer-link {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .divider {
+    display: none;
+  }
+}
+
+/* Additional styling for better visibility */
+.footer * {
+  color: inherit !important;
+}
+
+/* Ensure text is visible on all backgrounds */
+.footer:not(.light) {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer.light {
+  text-shadow: none;
+}

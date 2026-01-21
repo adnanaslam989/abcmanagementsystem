@@ -1,0 +1,558 @@
+/* UpdatePersonalDetail.css - COMPLETE VERSION */
+
+/* ==================== MAIN CONTAINERS ==================== */
+.update-personal-detail,
+.paf-employee {
+  padding: 0px;
+  max-width:none;
+  margin: 0 0;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* ==================== FORMS ==================== */
+.personal-detail-form,
+.paf-employee-form {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 0px;
+}
+
+/* ==================== HEADERS ==================== */
+.form-header {
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.form-header h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==================== MESSAGES ==================== */
+.message {
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 15px auto;
+  font-weight: 500;
+  text-align: center;
+  max-width: 600px;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* ==================== FORM LAYOUT ==================== */
+.form-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.photo-section {
+  flex: 0 0 280px;
+  
+}
+
+.photo-container {
+    position: relative;
+    width: 200px;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 4px solid white;
+}
+
+.form-section {
+  flex: 1;
+  min-width: 600px;
+}
+
+/* ==================== PHOTO SECTION - UPDATED ==================== */
+.photo-container {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* PHOTO BUTTONS - PLACED FIRST */
+.photo-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  order: 1; /* This ensures buttons appear first */
+}
+
+.update-photo-btn,
+.upload-photo-btn,
+.remove-photo-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.update-photo-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.update-photo-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2980b9, #21618c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.update-photo-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.upload-photo-btn {
+  background: linear-gradient(135deg, #27ae60, #219a52);
+  color: white;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.upload-photo-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #219a52, #1e8449);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.remove-photo-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.remove-photo-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+/* PHOTO WRAPPER - NEW CLASS */
+.photo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2; /* This ensures photo appears after buttons */
+}
+
+/* EMPLOYEE PHOTO - PLACED BELOW BUTTONS */
+.employee-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3498db;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.employee-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.employee-photo[src*="default-avatar"] {
+  border: 4px solid #95a5a6;
+}
+
+/* ==================== FILE INFO ==================== */
+.file-info {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+  order: 3;
+}
+
+.file-info small {
+  display: block;
+  margin: 2px 0;
+}
+
+/* ==================== UPLOAD PROGRESS ==================== */
+.upload-progress {
+  margin-top: 10px;
+  text-align: center;
+  order: 4;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  animation: progressAnimation 2s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.upload-progress p {
+  margin: 0;
+  font-size: 13px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* ==================== DATAGRID ==================== */
+.datagrid {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dee2e6;
+}
+
+.datagrid table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.datagrid th {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.datagrid td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.datagrid tr:last-child td {
+  border-bottom: none;
+}
+
+.datagrid tr.alt {
+  background-color: #f8f9fa;
+}
+
+.datagrid tr:hover {
+  background-color: #f1f3f4;
+}
+
+.datagrid td:first-child {
+  font-weight: 600;
+  color: #2c3e50;
+  width: 200px;
+  background-color: #f8f9fa;
+  white-space: nowrap;
+}
+
+/* ==================== INPUT FIELDS ==================== */
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+input.readonly {
+  background-color: #f8f9fa !important;
+  color: #6c757d !important;
+  border-color: #dee2e6 !important;
+  cursor: not-allowed !important;
+}
+
+/* Specific readonly field styling */
+.datagrid input.readonly,
+.datagrid textarea.readonly,
+.datagrid select.readonly {
+  background-color: #f3d0d6 !important;
+  color: #666 !important;
+  border: 1px solid #f3d0d6 !important;
+  cursor: not-allowed !important;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* ==================== ACTION BUTTONS ==================== */
+.action-buttons {
+  text-align: center;
+  padding: 25px 20px !important;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+  border-top: 1px solid #dee2e6;
+}
+
+.submit-btn, .cancel-btn {
+  padding: 14px 35px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 10px;
+  min-width: 180px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #27ae60, #219a52);
+  color: white;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #219a52, #1e8449);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.submit-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
+  box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7f8c8d, #6c7a7d);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
+}
+
+/* ==================== FORM NOTE ==================== */
+.form-note {
+  text-align: center;
+  margin-top: 25px;
+  padding: 15px;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  color: #856404;
+}
+
+.form-note h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ==================== LOADING STATES ==================== */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.5s linear infinite;
+  color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+  .form-container {
+    flex-direction: column;
+  }
+  
+  .photo-section, .form-section {
+    flex: none;
+    min-width: auto;
+    
+  }
+  
+  .photo-container {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .update-personal-detail,
+  .paf-employee {
+    padding: 15px;
+  }
+  
+  .personal-detail-form,
+  .paf-employee-form {
+    padding: 20px;
+  }
+  
+  .form-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .datagrid td:first-child {
+    width: 150px;
+  }
+  
+  .action-buttons {
+    padding: 20px 15px !important;
+  }
+  
+  /* Stack photo buttons vertically on mobile */
+  .photo-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .update-photo-btn,
+  .upload-photo-btn,
+  .remove-photo-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .datagrid th {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+  
+  .datagrid td {
+    padding: 12px 15px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .datagrid td:first-child {
+    width: 100%;
+    background-color: #f8f9fa;
+    font-weight: 700;
+    padding-bottom: 5px;
+  }
+  
+  .datagrid tr {
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .datagrid tr.alt {
+    background-color: #f8f9fa;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .submit-btn, .cancel-btn {
+    margin: 5px 0;
+    width: 100%;
+  }
+}

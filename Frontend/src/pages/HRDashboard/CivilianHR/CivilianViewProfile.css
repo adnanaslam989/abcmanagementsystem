@@ -1,0 +1,643 @@
+/* Add to your existing CivilianViewProfile.css file */
+
+/* Header Actions */
+.header-actions {
+  margin-left: 0px;
+  
+}
+
+.add-new-btn {
+  padding: 0.75rem 1.5rem;
+  background: #9b59b6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-new-btn:hover:not(:disabled) {
+  background: #8e44ad;
+  transform: translateY(-2px);
+}
+
+.add-new-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Photo Section - Improved */
+.employee-photo-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photo-card {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+@media (max-width: 768px) {
+  .photo-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+.photo-container {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 4px solid white;
+}
+
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photo-container:hover .photo-overlay {
+  opacity: 1;
+}
+
+.photo-container:hover .photo-img {
+  transform: scale(1.05);
+}
+
+/* Upload Photo Button - Smaller Size */
+.upload-photo-btn {
+  background: rgba(255, 255, 255, 0.95);
+  color: #2c3e50;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem; /* Reduced from 0.75rem 1.5rem */
+  cursor: pointer;
+  font-size: 0.9rem; /* Reduced from 1rem */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Reduced from 0.75rem */
+  transition: all 0.3s ease;
+  min-width: 140px; /* Reduced from 160px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.upload-photo-btn:hover:not(:disabled) {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.upload-photo-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.upload-icon {
+  font-size: 1rem; /* Reduced from 1.2rem */
+}
+
+.upload-text {
+  white-space: nowrap;
+  font-size: 0.85rem; /* Reduced from default */
+}
+
+/* Update responsive design for smaller button */
+@media (max-width: 768px) {
+  .upload-photo-btn {
+    min-width: 120px; /* Reduced from 140px */
+    padding: 0.4rem 0.8rem; /* Reduced from 0.6rem 1rem */
+    font-size: 0.85rem;
+  }
+  
+  .upload-icon {
+    font-size: 0.9rem;
+  }
+  
+  .upload-text {
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .upload-photo-btn {
+    min-width: 110px; /* Reduced from 140px */
+    padding: 0.35rem 0.7rem; /* Reduced from 0.6rem 1rem */
+    font-size: 0.8rem;
+  }
+  
+  .upload-icon {
+    font-size: 0.85rem;
+  }
+  
+  .upload-text {
+    font-size: 0.75rem;
+  }
+}
+
+.upload-icon {
+  font-size: 1.2rem;
+}
+
+.upload-text {
+  white-space: nowrap;
+}
+
+.employee-info-card {
+  flex: 1;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.employee-basic-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.employee-appointment {
+  margin: 0 0 0.75rem 0;
+  color: #3498db;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.employee-pak, .employee-section {
+  margin: 0.5rem 0;
+  color: #495057;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.employee-pak:before {
+  content: "🆔";
+}
+
+.employee-section:before {
+  content: "🏢";
+}
+
+/* Employee Actions - Improved */
+.employee-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.employee-actions button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 60px;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  color: white;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(243, 156, 18, 0.3);
+}
+
+.edit-inline-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+}
+
+.edit-inline-btn:hover {
+  background: linear-gradient(135deg, #2980b9 0%, #1f618d 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+.print-btn-action {
+  background: linear-gradient(135deg, #27ae60 0%, #219652 100%);
+  color: white;
+}
+
+.print-btn-action:hover {
+  background: linear-gradient(135deg, #219652 0%, #1e8449 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(39, 174, 96, 0.3);
+}
+
+.photo-btn {
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  color: white;
+}
+
+.photo-btn:hover {
+  background: linear-gradient(135deg, #8e44ad 0%, #7d3c98 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(155, 89, 182, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.btn-text {
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .employee-photo-section {
+    padding: 1.5rem;
+  }
+  
+  .photo-container {
+    width: 180px;
+    height: 225px;
+  }
+  
+  .employee-basic-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .employee-appointment {
+    font-size: 1.1rem;
+  }
+  
+  .employee-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .employee-actions button {
+    min-height: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-photo-section {
+    padding: 1rem;
+  }
+  
+  .photo-container {
+    width: 160px;
+    height: 200px;
+  }
+  
+  .photo-card {
+    gap: 1rem;
+  }
+  
+  .upload-photo-btn {
+    min-width: 140px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .employee-basic-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .employee-actions button {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .employee-photo-section {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .photo-card {
+    flex-direction: row;
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .photo-container {
+    border: 2px solid #ccc;
+    box-shadow: none;
+  }
+  
+  .photo-overlay,
+  .upload-photo-btn,
+  .employee-actions,
+  .upload-icon,
+  .upload-text,
+  .btn-icon {
+    display: none !important;
+  }
+  
+  .employee-info-card {
+    background: none;
+    border: none;
+    padding-left: 0;
+  }
+  
+  .employee-basic-info h3 {
+    color: black;
+    font-size: 16pt;
+  }
+  
+  .employee-pak:before,
+  .employee-section:before {
+    content: "";
+  }
+}
+/* Edit Form Overlay */
+.edit-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.edit-form-container {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.edit-form-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.edit-form-header h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.edit-form-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.edit-form {
+  padding: 2rem;
+}
+
+/* Form Grid for Edit Form */
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.form-section h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #3498db;
+  font-size: 1.2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #e74c3c;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Error Messages */
+.error-text {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Form Actions for Edit Form */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 2px solid #e9ecef;
+}
+
+.cancel-btn,
+.save-btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.cancel-btn {
+  background: #95a5a6;
+  color: white;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+.save-btn {
+  background: #27ae60;
+  color: white;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #219652;
+  transform: translateY(-2px);
+}
+
+.cancel-btn:disabled,
+.save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Responsive Design for Edit Form */
+@media (max-width: 768px) {
+  .edit-form-container {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+  
+  .edit-form {
+    padding: 1rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-btn,
+  .save-btn {
+    width: 100%;
+  }
+  
+  .employee-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .edit-btn,
+  .edit-inline-btn,
+  .print-btn-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-form-header {
+    padding: 1rem;
+  }
+  
+  .edit-form-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .form-section h4 {
+    font-size: 1.1rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .employee-actions,
+  .edit-form-overlay,
+  .upload-photo-btn,
+  .add-new-btn,
+  .header-actions {
+    display: none !important;
+  }
+  
+  .edit-form-container {
+    display: none !important;
+  }
+}

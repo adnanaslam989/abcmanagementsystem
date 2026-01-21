@@ -1,0 +1,339 @@
+/* Employee Detail View Page Styles */
+.employee-detail-page {
+  min-height: 100vh;
+  background: var(--background-light);
+}
+
+/* Action Buttons */
+.action-buttons-top {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  flex-wrap: wrap;
+}
+
+.print-btn, .email-btn, .back-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.print-btn {
+  background: linear-gradient(135deg, var(--accent-blue), #2980b9);
+  color: white;
+}
+
+.print-btn:hover {
+  background: linear-gradient(135deg, #2980b9, #1c6ea4);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.email-btn {
+  background: linear-gradient(135deg, var(--accent-green), #219652);
+  color: white;
+}
+
+.email-btn:hover {
+  background: linear-gradient(135deg, #219652, #1e8449);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.back-btn {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #7f8c8d, #6c7b7d);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.detail-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: 25px;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.header-left h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.header-left h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+}
+
+.employee-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.employee-text {
+  text-align: right;
+}
+
+.employee-text strong {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.photo-placeholder {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: var(--shadow-md);
+}
+
+/* Sections */
+.section {
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.section h2, .section h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 3px solid var(--accent-blue);
+  padding-bottom: var(--spacing-md);
+}
+
+/* Tables */
+.datagrid {
+  width: 100%;
+  border: 2px solid var(--accent-blue);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-table, .summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.detail-table th, .summary-table th {
+  background: linear-gradient(135deg, var(--accent-blue), #2980b9);
+  color: white;
+  padding: 16px 12px;
+  text-align: center;
+  font-weight: 600;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-table th:last-child, .summary-table th:last-child {
+  border-right: none;
+}
+
+.detail-table td, .summary-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.detail-table td:last-child, .summary-table td:last-child {
+  border-right: none;
+}
+
+.detail-table tbody tr:last-child td,
+.summary-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.detail-table tbody tr.alt,
+.summary-table tbody tr.alt {
+  background-color: #f8f9fa;
+}
+
+.detail-table tbody tr:hover,
+.summary-table tbody tr:hover {
+  background-color: #e3f2fd;
+}
+
+/* Summary table specific styles */
+.summary-table {
+  table-layout: fixed;
+}
+
+.summary-table th:nth-child(1) { width: 10%; }
+.summary-table th:nth-child(2) { width: 8%; }
+.summary-table th:nth-child(3) { width: 10%; }
+.summary-table th:nth-child(4) { width: 10%; }
+.summary-table th:nth-child(5) { width: 10%; }
+.summary-table th:nth-child(6) { width: 10%; }
+.summary-table th:nth-child(7) { width: 12%; }
+.summary-table th:nth-child(8) { width: 12%; }
+.summary-table th:nth-child(9) { width: 8%; }
+.summary-table th:nth-child(10) { width: 10%; }
+
+/* Report Footer */
+.report-footer {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: #f8f9fa;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  margin-top: var(--spacing-xl);
+}
+
+.report-footer p {
+  margin: 8px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Loading and Error States */
+.loading-container, .error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  color: var(--text-dark);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Print Styles */
+@media print {
+  .action-buttons-top {
+    display: none;
+  }
+  
+  .employee-detail-page {
+    background: white;
+    padding: 0;
+  }
+  
+  .detail-header {
+    background: #667eea !important;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .datagrid {
+    border: 2px solid #000;
+  }
+  
+  .detail-table th, .summary-table th {
+    background: #ccc !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .employee-detail-page {
+    padding: 10px;
+  }
+  
+  .action-buttons-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .detail-header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-lg);
+  }
+  
+  .employee-info {
+    flex-direction: column-reverse;
+  }
+  
+  .employee-text {
+    text-align: center;
+  }
+  
+  .section {
+    padding: var(--spacing-md);
+  }
+  
+  .detail-table, .summary-table {
+    font-size: 12px;
+  }
+  
+  .detail-table th, .detail-table td,
+  .summary-table th, .summary-table td {
+    padding: 8px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-table, .summary-table {
+    font-size: 11px;
+  }
+  
+  .photo-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .detail-header {
+    padding: var(--spacing-md);
+  }
+  
+  .header-left h3 {
+    font-size: 18px;
+  }
+  
+  .header-left h2 {
+    font-size: 24px;
+  }
+}
